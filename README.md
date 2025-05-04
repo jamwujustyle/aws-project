@@ -13,4 +13,4 @@ to start the project connection to EC2 instance is required. once inside instanc
 ## links: 
 s3 http://zhamshidt1.s3-website.ap-northeast-2.amazonaws.com
 rds endpoint db-zhamshid.clyucs4e44b4.ap-northeast-2.rds.amazonaws.com
-ec2 instance ssh -i "zhamshid_key.pem" ubuntu@ec2-52-79-253-34.ap-northeast-2.compute.amazonaws.com, elastic ip address 3.36.4.76
+ec2 instance ssh -i "zhamshid_key.pem" ubuntu@ec2-3-36-4-76.ap-northeast-2.compute.amazonaws.com, elastic ip address 3.36.4.76
