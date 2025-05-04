@@ -11,7 +11,8 @@ to start the project connection to EC2 instance is required. once inside instanc
 ![image](https://github.com/user-attachments/assets/67e8b1d6-7841-4998-8446-ce8d0ab6ff35)
 ![image](https://github.com/user-attachments/assets/e3a8a70a-0483-4d8d-b664-ee8873723fde)
 
-## links: 
+## links and credentials: 
 s3 http://zhamshidt1.s3-website.ap-northeast-2.amazonaws.com
 rds endpoint db-zhamshid.clyucs4e44b4.ap-northeast-2.rds.amazonaws.com
 ec2 instance ssh -i "zhamshid_key.pem" ubuntu@ec2-3-36-4-76.ap-northeast-2.compute.amazonaws.com, elastic ip address 3.36.4.76
+dbname: db_zhamshid creds: postgres postgres
