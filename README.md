@@ -9,6 +9,7 @@ to start the project connection to EC2 instance is required. once inside instanc
 ![image](https://github.com/user-attachments/assets/8bd9a796-4673-45a6-a90d-138d066b69e0)
 ![image](https://github.com/user-attachments/assets/9fc699a1-ba5f-4585-b7b2-8eb4674eeb82)
 ![image](https://github.com/user-attachments/assets/67e8b1d6-7841-4998-8446-ce8d0ab6ff35)
+![image](https://github.com/user-attachments/assets/e3a8a70a-0483-4d8d-b664-ee8873723fde)
 
 ## links: 
 s3 http://zhamshidt1.s3-website.ap-northeast-2.amazonaws.com
