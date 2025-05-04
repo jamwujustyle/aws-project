@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clean Jobs Dataset Management</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+        .container {
+            width: 90%;
+            max-width: 20000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        .card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        .btn-delete {
+            background-color: #e74c3c;
+        }
+        .btn-delete:hover {
+            background-color: #c0392b;
+        }
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        .data-table th, .data-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            max-width: 200px; /* Set a max-width for table cells */
+            overflow: hidden; /* Hide overflow */
+            text-overflow: ellipsis; /* Add ellipsis for overflow */
+            white-space: nowrap; /* Prevent text wrapping */
+            vertical-align: top; /* Align content to the top */
+        }
+        .data-table th {
+            background-color: #f2f2f2;
+        }
+        .data-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        .alert {
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .alert-success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        #alert-container {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Clean Jobs Dataset Management System</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        <div id="alert-container"></div>
+
+        <div class="card">
+            <h2>Dataset Information</h2>
+            <div id="dataset-info">
+                <p>Loading dataset information...</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Add New Job Record</h2>
+            <form id="add-form">
+                <div id="dynamic-form">
+                    <div class="form-group">
+                        <label for="title">Title:</label>
+                        <input type="text" id="title" name="title" maxlength="64" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company:</label>
+                        <input type="text" id="company" name="company" maxlength="64" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location:</label>
+                        <input type="text" id="location" name="location" maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="link">Link:</label>
+                        <input type="text" id="link" name="link" maxlength="128" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="source">Source:</label>
+                        <input type="text" id="source" name="source" maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="date_posted">Date Posted:</label>
+                        <input type="text" id="date_posted" name="date_posted" maxlength="50" placeholder="e.g., YYYY-MM-DD or text" required>
+                    </div>
+                     <div class="form-group">
+                        <label for="work_type">Work Type:</label>
+                        <input type="text" id="work_type" name="work_type" maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="employment_type">Employment Type:</label>
+                        <input type="text" id="employment_type" name="employment_type" maxlength="50" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <textarea id="description" name="description" rows="4" maxlength="16384" required></textarea>
+                    </div>
+                </div>
+                <div class="btn-container">
+                    <button type="submit" class="btn">Add Job Record</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Delete Record</h2>
+            <form id="delete-form">
+                <div class="form-group">
+                    <label for="record_id">Record ID:</label>
+                    <input type="number" id="record_id" name="record_id" required>
+                </div>
+                <div class="btn-container">
+                    <button type="submit" class="btn btn-delete">Delete Record</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Data Preview</h2>
+            <div id="data-preview">
+                <p>Loading data preview...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Configuration - Update with your own values
+        const API_BASE_URL = "http://3.36.4.76:5000"; // Replace with your EC2 public IP or domain
+
+        // Display alert
+        function showAlert(message, type = 'success') {
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert alert-${type}`;
+            alertDiv.textContent = message;
+
+            const alertContainer = document.getElementById('alert-container');
+            alertContainer.appendChild(alertDiv);
+
+            // Remove alert after 5 seconds
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 5000);
+        }
+
+        // Fetch dataset schema and info
+        async function fetchDatasetSchema() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/schema`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch schema');
+                }
+
+                const schema = await response.json();
+
+                // Update dataset info
+                document.getElementById('dataset-info').innerHTML = `
+                    <p><strong>Table Name:</strong> ${schema.table_name || 'tbl_zhamshid_clean_jobs'}</p>
+                    <p><strong>Total Records:</strong> ${schema.record_count || 'Loading...'}</p>
+                    <p><strong>Description:</strong> Dataset containing information about job postings.</p>
+                    <p><strong>Dataset Fields:</strong></p>
+                    <ul>
+                        <li>id (integer)</li>
+                        <li>title (varchar 64)</li>
+                        <li>company (varchar 64)</li>
+                        <li>location (varchar 50)</li>
+                        <li>link (varchar 128)</li>
+                        <li>source (varchar 50)</li>
+                        <li>date_posted (varchar 50)</li>
+                        <li>work_type (varchar 50)</li>
+                        <li>employment_type (varchar 50)</li>
+                        <li>description (varchar 16384)</li>
+                    </ul>
+                `;
+
+                // Form is now hardcoded in HTML to match the specific dataset structure
+            } catch (error) {
+                console.error('Error fetching schema:', error);
+                document.getElementById('dataset-info').innerHTML = `
+                    <p class="alert alert-danger">Error loading dataset information: ${error.message}</p>
+                    <p>Using default clean jobs dataset information.</p>
+                    <p><strong>Table Name:</strong> tbl_zhamshid_clean_jobs</p>
+                    <p><strong>Description:</strong> Dataset containing information about job postings.</p>
+                `;
+            }
+        }
+
+        // Fetch and display data preview
+        async function fetchDataPreview() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/preview`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch data preview');
+                }
+
+                const data = await response.json();
+
+                if (data.records && data.records.length > 0) {
+                    // Get column names from the first record
+                    const columns = Object.keys(data.records[0]);
+
+                    let tableHTML = `
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    ${columns.map(col => `<th>${col}</th>`).join('')}
+                                </tr>
+                            </thead>
+                            <tbody>
+                    `;
+
+                    data.records.forEach(record => {
+                        tableHTML += `
+                            <tr>
+                                ${columns.map(col => `<td>${record[col]}</td>`).join('')}
+                            </tr>
+                        `;
+                    });
+
+                    tableHTML += `
+                            </tbody>
+                        </table>
+                    `;
+
+                    document.getElementById('data-preview').innerHTML = tableHTML;
+                } else {
+                    document.getElementById('data-preview').innerHTML = `
+                        <p>No data available.</p>
+                    `;
+                }
+            } catch (error) {
+                console.error('Error fetching data preview:', error);
+                document.getElementById('data-preview').innerHTML = `
+                    <p class="alert alert-danger">Error loading data preview: ${error.message}</p>
+                `;
+            }
+        }
+
+        // Add record form submission
+        document.getElementById('add-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            // Collect form data
+            const formData = {};
+            const formElements = this.elements;
+
+            for (let i = 0; i < formElements.length; i++) {
+                const element = formElements[i];
+                if (element.name && element.name !== 'submit' && element.name !== '') {
+                    formData[element.name] = element.value;
+                }
+            }
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/add`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showAlert('Record added successfully!');
+                    this.reset();
+                    fetchDataPreview(); // Refresh data preview
+                } else {
+                    showAlert(result.error || 'Failed to add record', 'danger');
+                }
+            } catch (error) {
+                console.error('Error adding record:', error);
+                showAlert(`Error adding record: ${error.message}`, 'danger');
+            }
+        });
+
+        // Delete record form submission
+        document.getElementById('delete-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const recordId = document.getElementById('record_id').value;
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/delete/${recordId}`, {
+                    method: 'DELETE'
+                });
+
+                const result = await response.json();
+
+                if (response.ok) {
+                    showAlert('Record deleted successfully!');
+                    this.reset();
+                    fetchDataPreview(); // Refresh data preview
+                } else {
+                    showAlert(result.error || 'Failed to delete record', 'danger');
+                }
+            } catch (error) {
+                console.error('Error deleting record:', error);
+                showAlert(`Error deleting record: ${error.message}`, 'danger');
+            }
+        });
+
+        // Initialize the page
+        window.addEventListener('DOMContentLoaded', () => {
+            fetchDatasetSchema();
+            fetchDataPreview();
+        });
+    </script>
+</body>
+</html>
