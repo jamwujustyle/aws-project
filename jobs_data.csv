@@ -1,0 +1,26 @@
+id,title,company,location,link,source,date_posted,work_type,employment_type,description
+1,Junior Software Developer,TechCorp,New York,https://www.techcorp.com/jobs/1,LinkedIn,2025-05-01,Full-Time,Permanent,Develop software applications using Python and JavaScript.
+2,Senior Data Analyst,DataSolutions,San Francisco,https://www.datasolutions.com/jobs/2,Indeed,2025-04-25,Full-Time,Permanent,Analyze large datasets and provide insights for business decision-making.
+3,Product Manager,InnovateTech,Los Angeles,https://www.innovatetech.com/jobs/3,LinkedIn,2025-04-18,Full-Time,Permanent,Lead product development and manage cross-functional teams.
+4,Machine Learning Engineer,AI Innovations,Boston,https://www.aiinnovations.com/jobs/4,Indeed,2025-05-03,Full-Time,Permanent,Develop and deploy machine learning models for real-world applications.
+5,UX/UI Designer,CreativeStudio,Chicago,https://www.creativestudio.com/jobs/5,LinkedIn,2025-04-20,Full-Time,Permanent,Design intuitive user interfaces and user experiences for web and mobile applications.
+6,Data Scientist,DataSciences Inc.,Seattle,https://www.datasciences.com/jobs/6,Indeed,2025-04-22,Full-Time,Permanent,Create statistical models and perform data analysis to drive business insights.
+7,Frontend Developer,WebWorks,Austin,https://www.webworks.com/jobs/7,LinkedIn,2025-04-10,Full-Time,Permanent,"Build responsive and accessible websites using HTML, CSS, and JavaScript."
+8,Backend Developer,BackendSolutions,San Diego,https://www.backendsolutions.com/jobs/8,LinkedIn,2025-04-15,Full-Time,Permanent,Develop APIs and backend services to support client applications.
+9,Full Stack Developer,DevOps Hub,New York,https://www.devopshub.com/jobs/9,Indeed,2025-04-30,Full-Time,Permanent,Work on both front-end and back-end technologies to create seamless web applications.
+10,AI Researcher,FutureAI,Los Angeles,https://www.futureai.com/jobs/10,LinkedIn,2025-04-28,Full-Time,Permanent,Conduct research to advance artificial intelligence algorithms and systems.
+11,Graphic Designer,DesignMasters,Denver,https://www.designmasters.com/jobs/11,Indeed,2025-05-02,Full-Time,Permanent,"Create visual content for websites, advertisements, and social media campaigns."
+12,Content Writer,Content Creators,Chicago,https://www.contentcreators.com/jobs/12,LinkedIn,2025-04-12,Full-Time,Permanent,"Write engaging content for blogs, websites, and social media platforms."
+13,DevOps Engineer,TechOps,Seattle,https://www.techops.com/jobs/13,Indeed,2025-04-18,Full-Time,Permanent,Automate infrastructure and deploy applications using CI/CD tools.
+14,Cybersecurity Analyst,SecureTech,San Francisco,https://www.securetech.com/jobs/14,LinkedIn,2025-05-01,Full-Time,Permanent,Monitor and protect computer systems and networks from cyber threats.
+15,Data Engineer,DataEngineers LLC,Boston,https://www.dataengineers.com/jobs/15,Indeed,2025-04-16,Full-Time,Permanent,Design and implement scalable data pipelines for large datasets.
+16,QA Engineer,QualitySoft,Austin,https://www.qualitysoft.com/jobs/16,LinkedIn,2025-04-13,Full-Time,Permanent,Develop test plans and automate testing processes for software products.
+17,Business Analyst,TechConsult,Chicago,https://www.techconsult.com/jobs/17,Indeed,2025-04-21,Full-Time,Permanent,Analyze business processes and create solutions to optimize efficiency.
+18,Network Engineer,NetSecure,New York,https://www.netsecure.com/jobs/18,LinkedIn,2025-04-23,Full-Time,Permanent,"Design, implement, and troubleshoot computer networks and systems."
+19,Cloud Solutions Architect,CloudTech Solutions,San Francisco,https://www.cloudtechsolutions.com/jobs/19,Indeed,2025-04-27,Full-Time,Permanent,Design cloud-based systems and architectures for enterprise clients.
+20,Database Administrator,DataPros,Boston,https://www.datapros.com/jobs/20,LinkedIn,2025-05-04,Full-Time,Permanent,Manage and optimize relational and NoSQL databases for high availability and performance.
+21,Mobile Developer,AppMasters,Austin,https://www.appmasters.com/jobs/21,Indeed,2025-04-19,Full-Time,Permanent,Develop native and hybrid mobile applications for iOS and Android.
+22,Security Engineer,SafeSystems,Seattle,https://www.safesystems.com/jobs/22,LinkedIn,2025-05-02,Full-Time,Permanent,Implement security measures and monitor infrastructure for vulnerabilities.
+23,Software Architect,TechFusion,Chicago,https://www.techfusion.com/jobs/23,Indeed,2025-04-11,Full-Time,Permanent,"Design and implement scalable, high-performance software systems and solutions."
+24,Digital Marketing Manager,MarketPro,New York,https://www.marketpro.com/jobs/24,LinkedIn,2025-04-29,Full-Time,Permanent,Create and execute digital marketing strategies to promote brand awareness.
+25,Sales Engineer,SalesForce Inc.,San Francisco,https://www.salesforce.com/jobs/25,Indeed,2025-04-14,Full-Time,Permanent,Work with the sales team to understand customer needs and provide technical solutions.
